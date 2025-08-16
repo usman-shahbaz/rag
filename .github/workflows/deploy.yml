@@ -1,0 +1,27 @@
+name: Build and Deploy to Azure
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Log in to Azure
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+    - name: Log in to ACR
+      run: az acr login --name ragdockerimage
+
+    - name: Build and Push Docker image
+      run: |
+        docker build -t ragdockerimage.azurecr.io/rag:latest .
+        docker push ragdockerimage.azurecr.io/rag:latest
