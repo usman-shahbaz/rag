@@ -12,3 +12,19 @@ openai_api_key = st.text_input("Enter OpenAI API Key", type="password")
 
 if openai_api_key:
     os.environ['OPENAI_API_KEY'] = openai_api_key
+
+ class CustomerSupportAIAgent:
+        def __init__(self):
+            config = {
+                "vector_store": {
+                    "provider": "qdrant",
+                    "config": {
+                        "model": "gpt-4o-mini",
+                        "host": "localhost",
+                        "port": 6333,
+                    }
+                },
+            }
+            self.memory = Memory.from_config(config)
+            self.client = OpenAI()
+            self.app_id = "customer-support"
