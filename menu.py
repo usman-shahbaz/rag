@@ -1,5 +1,4 @@
 """
-Menu data constants — Python equivalent of menu_data.ts.
 All drink, size, milk, syrup, sweetener, and topping options are defined here
 as the single source of truth for what the agent can offer.
 """
