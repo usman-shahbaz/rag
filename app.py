@@ -62,7 +62,6 @@ def create_app(config_name: str = None) -> Flask:
     app.register_blueprint(search_bp,    url_prefix="/api/search")
     app.register_blueprint(rag_bp,       url_prefix="/api/rag")
 
-    # ── Health endpoint ───────────────────────────────────────────────────
     @app.get("/health")
     def health():
         return {"status": "ok", "service": "rag-support-api"}
