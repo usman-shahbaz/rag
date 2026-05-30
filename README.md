@@ -1,6 +1,6 @@
 # RAG Customer Support System
 
-A production-ready Retrieval-Augmented Generation (RAG) customer support system built with Flask, Streamlit, Amazon Bedrock, FAISS, and AWS S3.
+A production-ready Retrieval Augmented Generation (RAG) customer support system built with Flask, Streamlit, Amazon Bedrock, FAISS, and AWS S3.
 
 ---
 
